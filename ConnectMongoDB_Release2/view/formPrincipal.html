@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Resumen de Compras</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="description" content="Carrito de Compras desarrollado con PHP y con MongoDB" />
+	<meta name="keywords" content="carrito de compras,shopping car,nosql app" />
+	<meta name="author" content="CVSoft" />
+	<meta name="robots" content="all ,follow, index">
+	<meta name="generator" content="Notepad++,Netbeans">
+	
+	<link rel="stylesheet" href="style.css" type="text/css" />
+  </head>
+  <body>
+      <h1>Los productos disponibles</h1>
+      <?php if($colProduct != null ){ ?>
+      <table border="2" width="2" cellspacing="0">
+          <thead>
+              <tr>
+                  <th></th>
+                  <th>Nombre</th>
+                  <th>Cantidad</th>
+                  <th>Precio</th>
+              </tr>
+          </thead>
+          <?php foreach($colProduct as $producto) { ?>
+          <tbody>
+              <tr>
+                  <td><a href="?opcion=anhadir&id=<?php echo $producto->getNombre(); ?>">Añadir al carrito</a></td>
+                  <td><?php echo $producto->getNombre(); ?></td>
+                  <td><?php echo $producto->getCantidad(); ?> unidades</td>
+                  <td>S/.<?php echo $producto->getPrecio(); ?> </td>
+              </tr>
+          </tbody>
+          <?php } ?>
+      </table>
+      <?php }else{ ?>
+      <h1><strong> No hay productos ah vender </strong></h1>
+      <?php } ?>
+      <p><a href="../exit_system.php">Salir del sistema</a></p>
+  </body>
+</html>

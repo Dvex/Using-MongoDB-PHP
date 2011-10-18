@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Modulo del Administrador</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="description" content="Carrito de Compras desarrollado con PHP y con MongoDB" />
+	<meta name="keywords" content="carrito de compras,shopping car,nosql app" />
+	<meta name="author" content="CVSoft" />
+	<meta name="robots" content="all ,follow, index">
+	<meta name="generator" content="Notepad++,Netbeans">
+	
+	<link rel="stylesheet" href="style.css" type="text/css" />
+  </head>
+  <body>
+      <h1>Añadir Productos a Vender</h1>
+      <form method="POST" action="?opcion=insertar">
+          <p><label for="nombre">Nombre:</label> <input type="text" id="nombre" name="nombre" /></p>
+          <p><label for="cantidad">Cantidad:</label> <input type="text" id="cantidad" name="cantidad" /></p>
+          <p><label for="precio">Precio:</label> <input type="text" id="precio" name="precio" /></p>
+          <input type="submit" value="Añadir Producto" />
+
+      </form>
+      <p><a href="../exit_system.php">Salir del sistema</a></p>
+  </body>
+</html>

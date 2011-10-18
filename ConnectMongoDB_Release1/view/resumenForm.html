@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Modulo del Administrador</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="description" content="Carrito de Compras desarrollado con PHP y con MongoDB" />
+	<meta name="keywords" content="carrito de compras,shopping car,nosql app" />
+	<meta name="author" content="CVSoft" />
+	<meta name="robots" content="all ,follow, index">
+	<meta name="generator" content="Notepad++,Netbeans">
+	
+	<link rel="stylesheet" href="style.css" type="text/css" />
+  </head>
+  <body>
+      <h1>Resumen de los productos a vender</h1>
+      <?php if($colProduct != null){ ?>
+      <table>
+          <tr>
+              <th>Nombre</th>
+              <th>Cantidad</th>
+              <th>Precio</th>
+              <th>Opciones</th>
+          </tr>
+          <?php foreach($colProduct as $producto) { ?>
+          <tr>
+            <td> <?php echo $producto->getNombre(); ?> </td>
+            <td> <?php echo $producto->getCantidad(); ?> unid </td>
+            <td> S/.<?php echo $producto->getPrecio(); ?> </td>
+            <td> <a href="?opcion=eliminarUno&id=<?php echo $producto->getNombre(); ?>">Eliminar</a> </td>
+          </tr>
+          <?php } ?>
+      </table>
+      <?php }else{ ?>
+            <h1>No hay productos para vender</h1>
+      <?php } ?>
+      <p><a href="?opcion=volver">Volver</a></p>
+      <p><a href="?opcion=eliminar">Eliminar todos los productos</a></p>
+  </body>
+</html>

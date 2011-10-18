@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Carrito de Compras</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="description" content="Carrito de Compras desarrollado con PHP y con MongoDB" />
+	<meta name="keywords" content="carrito de compras,shopping car,nosql app" />
+	<meta name="author" content="CVSoft" />
+	<meta name="robots" content="all ,follow, index">
+	<meta name="generator" content="Notepad++,Netbeans">
+	
+	<link rel="stylesheet" href="style.css" type="text/css" />
+  </head>
+  <body>
+      <h1>Carrito de Compras</h1>
+      <table border="2" width="2" cellspacing="0">
+          <thead>
+              <tr>
+                  <th>Nombre</th>
+                  <th>Precio</th>
+              </tr>
+          </thead>
+          <?php foreach(self::$_listProduct as $producto) { ?>
+          <tbody>
+              <tr>
+                  <td><?php echo $producto->getNombre(); ?></td>
+                  <td>S/.<?php echo $producto->getPrecio(); ?> </td>
+              </tr>
+          </tbody>
+          <?php } ?>
+      </table>
+
+      <p><a href="../index.php"> Seguir Comprando </a></p>
+      
+      <form method="POST" action="?opcion=comprar">
+          <input type="submit" value="comprar" />
+      </form>
+  </body>
+</html>
