@@ -1,0 +1,15 @@
+*******************************
+| Descripcion de las carpetas |
+*******************************
+
+La carpeta "ConnectMongoDB_Release1" ES EL MODULO DE ADMINISTRADOR.
+La carpeta "ConnectMongoDB_Release2" ES EL MODULO DE VENTAS.
+
+********************************************
+| Descripcion del archivo Persistencia.php |
+********************************************
+
+Se ah comentado en este archivo unas lineas en el cual se encuentra la
+conexion con 2 clases: MongoDB y Mongo.
+
+Descomentar dichas lineas para que la aplicacion pueda arrancar.
